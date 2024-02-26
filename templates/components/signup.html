@@ -1,0 +1,40 @@
+{% extends '_base.html' %}
+
+{% block navbar %}
+
+{% endblock navbar %}
+
+{% block content%}
+
+<div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full max-w-md mx-auto" data-v0-t="card"><div class="flex flex-col p-6 space-y-2"><h2 class="text-2xl font-bold">Login</h2>
+    <p class="text-gray-500 dark:text-gray-400">
+      Enter your email below to login to your account
+    </p>
+</div>
+    <div class="p-6">
+    <div class="space-y-4">
+        <div class="space-y-2">
+        <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="email">Email</label>
+            <input autocomplete="off" type="email" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="email" placeholder="m@example.com" required="">
+        </div>
+        <div class="space-y-2">
+            <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="password">Password</label>
+            <input autocomplete="off" type="password" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="password" required="">
+        </div>
+        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full">Sign In</button>
+    </div>
+        <div data-orientation="horizontal" role="none" class="shrink-0 bg-gray-100 h-[1px] w-full my-8">
+        </div>
+        <div class="space-y-4">
+            <p class="text-center text-sm">
+        Or sign in with
+      </p><div class="space-y-4">
+            <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full">Sign in with Google</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}
