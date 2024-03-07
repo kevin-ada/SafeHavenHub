@@ -1,0 +1,71 @@
+{% extends '_base.html' %}
+
+{% block content %}
+
+    <div class="grid gap-6 lg:gap-12">
+        <div class="px-4 py-6 md:px-6 lg:py-10">
+            <div class="space-y-2"><h1
+                    class="text-3xl font-bold tracking-tight lg:text-4xl xl:text-5xl dark:font-extrabold dark:text-gray-100">
+                {{ post.title }}
+            </h1>
+                <p class="text-gray-500 dark:text-gray-400">Posted on: {{ post.created_on }}</p></div>
+            <div class="prose prose-gray max-w-none not-prose">
+                <p>
+                    {{ post.body }}
+            </p>
+            </div>
+        </div>
+        <div class="px-4 py-6 md:px-6 lg:py-10">
+            <div class="space-y-2">
+                         {% if comments %}
+                <div class="flex items-start gap-4"><span
+                        class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border"><img
+                        class="aspect-square h-full w-full" alt="@shadcn" src="/placeholder-user.jpg"></span>
+   
+                        {% for comment in comments %}
+                            <div class="grid gap-1.5">
+                                <div class="flex items-center gap-2">
+                                    <div class="font-semibold">@{{ comment.author }}</div>
+                                    <div class="text-gray-500 text-xs dark:text-gray-400">{{ comment.created_on }}</div>
+                                </div>
+                                <div>
+                                    {{ comment.body }}
+                                </div>
+                            </div>
+                            {% empty %}
+                    {% endfor %}
+                {% else %}
+                   <div>No comments yet.</div>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-200 dark:border-gray-800">
+            <div class="px-4 py-6 md:px-6 lg:py-10"><h2
+                    class="text-2xl font-bold tracking-tight lg:text-3xl xl:text-4xl dark:font-extrabold dark:text-gray-100">
+                Leave a Comment
+            </h2>
+                <div class="grid gap-4 lg:grid-cols-2 xl:gap-8">
+                    <div class="space-y-4">
+                        <div class="space-y-2"><label for="name" class="block text-sm font-medium tracking-wide peer">
+                            Name<span class="text-red-500">*</span></label><input
+                                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                id="name" required="" placeholder="Your name"></div>
+                        <div class="space-y-2"><label for="email" class="block text-sm font-medium tracking-wide peer">
+                            Email<span class="text-red-500">*</span></label><input
+                                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                                id="email" required="" placeholder="Your email" type="email"></div>
+                    </div>
+                    <div class="space-y-2"><label for="comment" class="block text-sm font-medium tracking-wide peer">
+
+                        Comment<span class="text-red-500">*</span></label><textarea
+                            class="flex w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 min-h-[150px] peer"
+                            id="comment" required="" placeholder="Your comment"></textarea></div>
+                </div>
+                <div class="flex flex-col gap-2 sm:flex-row sm:items-start"></div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}

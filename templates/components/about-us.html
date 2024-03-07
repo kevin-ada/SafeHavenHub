@@ -1,0 +1,87 @@
+{% extends '_base.html' %}
+
+
+{% block content %}
+    <div class="flex flex-col min-h-[100dvh]">
+        <main class="flex-1">
+            <section class="w-full py-6 md:py-12 lg:py-24 xl:py-32">
+                <div class="container grid items-center gap-4 px-4 text-center md:px-6 lg:gap-10">
+                    <div class="space-y-3"><h2 class="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                        Welcome to the Community
+                    </h2>
+                        <p class="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                            Connect with other members, share your thoughts, and join the
+                            conversation.
+                        </p></div>
+                    <a class="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-gray-400 px-8 text-white text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50  dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
+                       href="{%url 'signup' %}">
+                        Join the Community
+                    </a></div>
+            </section>
+            <section class="w-full py-12 md:py-24 lg:py-32 border-t">
+                <div class="container grid items-center gap-4 px-4 text-center md:px-6 lg:gap-10">
+                    <div class="space-y-3"><h2 class="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                        Features
+                    </h2>
+                        <p class="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                            What we Believe we can achieve in this Community is limitless, But as We start Here are some of the Highlights of what we Think Makes Us Stand Out
+                        </p></div>
+                    <div class="mx-auto grid max-w-4xl items-start gap-4 sm:gap-6 md:gap-12 lg:max-w-5xl lg:grid-cols-3">
+                        <div class="grid gap-1"><h3 class="text-lg font-bold">A Community Built For You</h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">
+                                Have a passion For Writing, love out-door Activities, Then This is the Community Built For You
+                            </p></div>
+                        <div class="grid gap-1"><h3 class="text-lg font-bold">
+                            Real-time insights
+                        </h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">
+                                Interact With Your Community and Get Real Time and Get To Know What is Happening
+                            </p></div>
+                        <div class="grid gap-1"><h3 class="text-lg font-bold">
+                            Personalization at the edge
+                        </h3>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">
+                               All You need is to Sign Up and Start Creating Events and Blog Posts
+                            </p></div>
+                    </div>
+                </div>
+            </section>
+            <section class="w-full py-12 md:py-24 lg:py-32">
+                <div class="container grid items-center gap-4 px-4 text-center md:px-6">
+                    <div class="space-y-3"><h2 class="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+                       SAFE HAVEN! A Haven Made For You
+                    </h2>
+                        <p class="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                            Let your Community Speak up For you! You Deserved To Be Heard
+                        </p></div>
+                    <div class="mx-auto w-full max-w-sm space-y-2">
+                        <form class="flex space-x-2"><input
+                                class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 max-w-lg flex-1"
+                                placeholder="Enter your email" type="email">
+                            <button class="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-gray-400 px-8 text-white text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50  dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300" type="submit">
+                         Sign Up
+                          </button>
+                        </form>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">
+                            Subscribe to officially get Newsletters from us about any update happening in the Community
+                            <a class="underline underline-offset-2" href="#">
+                                Terms &amp; Conditions
+                            </a></p></div>
+                </div>
+            </section>
+        </main>
+        <footer class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t"><p
+                class="text-xs text-gray-500 dark:text-gray-400">
+            © 2024 SafeHaven. All rights reserved.
+        </p>
+            <nav class="sm:ml-auto flex gap-4 sm:gap-6"><a class="text-xs hover:underline underline-offset-4" href="#">
+                Terms of Service
+            </a><a class="text-xs hover:underline underline-offset-4" href="#">
+                Privacy
+            </a></nav>
+        </footer>
+    </div>
+
+
+
+{% endblock content %}

@@ -1,6 +1,8 @@
 from django.contrib.auth.base_user import BaseUserManager
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, User
 from django.db import models
+
+from SafeHavenHub import settings
 
 
 class CustomUserManager(BaseUserManager):
@@ -22,10 +24,11 @@ class CustomUserManager(BaseUserManager):
 
 class UserProfile(AbstractUser):
     username = None
+    email = models.CharField(max_length=20, unique=True)
+    name = models.CharField(max_length=30, null=True)
     bio = models.TextField(blank=True)
     profile_picture = models.ImageField(upload_to='profile_pictures/', blank=True, null=True)
     location = models.CharField(max_length=100, blank=True)
-    social_media_links = models.JSONField(blank=True, null=True)
     last_active = models.DateTimeField(auto_now=True)
     created_at = models.DateTimeField(auto_now_add=True)
     interests = models.TextField(blank=True)
@@ -35,10 +38,3 @@ class UserProfile(AbstractUser):
 
     def __str__(self):
         return self.email
-
-    class Meta:
-        permissions = [
-            ("can_crud_all_data", "Can create, read, update, and delete any data"),
-            ("can_crud_own_data", "Can create, read, update, and delete own data"),
-            ("can_read_data", "Can read data"),
-        ]
