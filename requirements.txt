@@ -16,6 +16,7 @@ django-rest-passwordreset==1.4.0
 djangorestframework==3.14.0
 djangorestframework-simplejwt==5.3.1
 frozenlist==1.4.1
+gunicorn==19.9.0
 idna==3.6
 multidict==6.0.5
 pillow==10.2.0
@@ -33,4 +34,3 @@ twilio==8.13.0
 typing_extensions==4.10.0
 urllib3==2.2.1
 yarl==1.9.4
-gunicorn==19.7.1
